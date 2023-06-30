@@ -7,9 +7,10 @@ def index(request):
     return render(request, 'index.html')
 
 def add_game(request):
-    name = request.POST.get('name')
-    description = request.POST.get('description')
-    price = request.POST.get('price')
-    href = request.POST.get('href')
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        description = request.POST.get('description')
+        price = request.POST.get('price')
+        href = request.POST.get('href')
     return render(request, 'add_game.html')
     

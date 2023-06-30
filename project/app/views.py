@@ -12,5 +12,7 @@ def add_game(request):
         description = request.POST.get('description')
         price = request.POST.get('price')
         href = request.POST.get('href')
+        new_game = Game(name=name, description=description, price=price, href=href)
+        new_game.save()
     return render(request, 'add_game.html')
     
